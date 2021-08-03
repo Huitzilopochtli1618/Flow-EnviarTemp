@@ -1,0 +1,117 @@
+[
+    {
+        "id": "0e0bd72e4ec2921e",
+        "type": "tab",
+        "label": "Flow Tarea ",
+        "disabled": false,
+        "info": "Este Flow envia la temperatura madiante un boton al tema grupal creado por el profesor"
+    },
+    {
+        "id": "8cd90bc46202c062",
+        "type": "mqtt out",
+        "z": "0e0bd72e4ec2921e",
+        "name": "",
+        "topic": "codigoIoT/SIC/flow3/temp",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "edd3004a.11da88",
+        "x": 1090,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "bb4c1f59646564db",
+        "type": "function",
+        "z": "0e0bd72e4ec2921e",
+        "name": "",
+        "func": "msg.payload = \"{\\\"ID\\\":\\\"Huitziuit9898\\\",\\\"Temp\\\":\\\"15\\\",\\\"mnsg\\\":\\\"pruebas\\\"}\" ;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 360,
+        "wires": [
+            [
+                "8cd90bc46202c062"
+            ]
+        ]
+    },
+    {
+        "id": "ed17f444c4e6cfb5",
+        "type": "ui_button",
+        "z": "0e0bd72e4ec2921e",
+        "name": "",
+        "group": "76c0a1b6e850e3eb",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 680,
+        "y": 440,
+        "wires": [
+            [
+                "bb4c1f59646564db"
+            ]
+        ]
+    },
+    {
+        "id": "edd3004a.11da88",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "18.198.240.106",
+        "port": "1883",
+        "clientid": "Huitzi",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "76c0a1b6e850e3eb",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "f8d0c69753dbe796",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false
+    },
+    {
+        "id": "f8d0c69753dbe796",
+        "type": "ui_tab",
+        "name": "Tab 1-flow 2-Fecha",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]
